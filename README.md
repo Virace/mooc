@@ -2,4 +2,4 @@
 
 ## 批量获取视频链接
 
-![](https://ws1.sinaimg.cn/large/a1e6bd2bly1fgt01g5yfrj20yk0js78o.jpg)
+![](https://raw.githubusercontent.com/Virace/mooc/master/Preview.jpg)
