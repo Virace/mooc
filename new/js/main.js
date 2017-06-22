@@ -7,7 +7,7 @@ $(document).ready(function() {
 		g_data='CHCP 65001\r\n';
         if (id != '') {
 			$('.notice').html('正在加载...');
-            $.getScript('/inc/getList.php?id=' + id,
+            $.getScript('../inc/getList.php?id=' + id,
             function() {
                 try{
 					t();
@@ -50,7 +50,7 @@ function t() {
             value.units.forEach(function(value, index, array) {
                 if (value.contentType === 1) {
                     var url = $.ajax({
-                        url: '/inc/getUrl.php?cid=' + value.contentId + '&id=' + value.id,
+                        url: '../inc/getUrl.php?cid=' + value.contentId + '&id=' + value.id,
                         dataType: "text",
                         success: function(data) {
                             //console.log(value.contentId, value.id, value.name, data);
