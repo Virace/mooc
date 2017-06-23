@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>中国大学MOOC(慕课) —— 课程视频地址获取</title>
-		<script type="text/javascript" src="./js/FileSaver.js"></script>
-		<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>中国大学MOOC(慕课) —— 课程视频地址获取</title>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/demo/sideshow20151016/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/component.css" />
+    <!--[if IE]>
+      <script src="static/js/html5.js"></script>
+    <![endif]-->
 	</head>
-	<body>
-	    <h1>中国大学MOOC(慕课) —— 课程视频地址获取</h1>
-	    <img src="https://ws1.sinaimg.cn/large/a1e6bd2bly1fgs6xs6wh7j20fm032t8q.jpg"><br>
-		<a href="/aria2.zip">组件包下载</a><br> 
-		<p>获取课程ID，点击提交数秒后下方会显示所有视频链接</p>
-		<p>如需要带文件名下载，请先点击上方灰色链接下载组件包，然后点击生成bat，会下载一个aria2c.bat,放在与压缩包内exe同级目录，双击bat即可下载</p>
-    	课程ID:<input type="text" value="1002035013" id="id" name="id" /><br> 
-        <button type="button" class="butn">提交</button><button type="button" class="butn2">生成bat</button><br> 
-		 
-        <textarea  wrap="off" style="white-space:nowrap; overflow-x:scroll;" id="url" rows="20" cols="50"></textarea>
-        <textarea id="url2" style="display:none"></textarea>
-        <p class="notice"></p>
-	</body>
-    <script type="text/javascript" src="./js/main.js"></script>
+  
+  <body>
+    <div class="container demo-1">
+      <div class="content">
+        <div id="large-header" class="large-header">
+          <canvas id="demo-canvas"></canvas>
+          <div class="main-title">
+            <h1>中国大学MOOC(慕课) —— 课程视频地址获取</h1>
+            <img src="https://ws1.sinaimg.cn/large/a1e6bd2bly1fgs6xs6wh7j20fm032t8q.jpg">
+            <br>
+            <a href="static/aria2.zip">组件包下载</a>
+            <br>
+            <p>获取课程ID，点击提交数秒后下方会显示所有视频链接</p>
+            <p>如需要带文件名下载，请先点击上方蓝色链接下载组件包，然后点击生成bat，会下载一个aria2c.bat,放在与压缩包内exe同级目录，双击bat即可下载</p><br>课程ID:
+            <input type="text" value="1002035013" id="id" name="id" />
+            <button type="button" class="butn">提交</button>
+            <button type="button" class="butn2">生成bat</button>
+            <br>
+            <br>
+            <br>
+            <p class="notice"></p>
+          </div>
+        </div>
+        <nav class="codrops-demos" style="display:none">
+          <textarea wrap="off" style="white-space:nowrap; overflow-x:scroll;width:100%;" id="url" rows="10" cols="50" wrap="hard"></textarea>
+          <textarea id="url2" style="display:none" rows="10" cols="50" wrap="hard"></textarea>
+        </nav>
+      </div>
+    </div>
+    <!-- /container -->
+    <!-- <script src="js/TweenLite.min.js"></script>  -->
+	    <script src="http://www.jq22.com/demo/sideshow20151016/js/TweenLite.min.js"></script> 
+    <!-- <script src="js/FileSaver.js"></script> -->
+	<script src="//cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.js"></script>
+    <!-- <script src="js/EasePack.min.js"></script> -->
+	    <script src="http://www.jq22.com/demo/sideshow20151016/js/EasePack.min.js"></script> 
+	<script src="http://www.jq22.com/demo/sideshow20151016/js/demo-1.js"></script>
+    <!-- <script src="js/rAF.js"></script> -->
+	<script src="http://www.jq22.com/demo/sideshow20151016/js/rAF.js"></script>
+    <!-- <script src="js/demo-1.js"></script> -->
+	<script src="static/js/main.js"></script>
+	<script>$('.codrops-demos').hide();</script>
+  </body>
 
 </html>

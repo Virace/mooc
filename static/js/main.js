@@ -1,4 +1,5 @@
 var g_data='CHCP 65001\r\n';
+var rurl=getRealPath();
 $(document).ready(function() {
     $(".butn").click(function() {	
 		$('#url').val('');
@@ -7,7 +8,7 @@ $(document).ready(function() {
 		g_data='CHCP 65001\r\n';
         if (id != '') {
 			$('.notice').html('正在加载...');
-            $.getScript('../inc/getList.php?id=' + id,
+            $.getScript(rurl+'/inc/getList.php?id=' + id,
             function() {
                 try{
 					t();
@@ -50,7 +51,7 @@ function t() {
             value.units.forEach(function(value, index, array) {
                 if (value.contentType === 1) {
                     var url = $.ajax({
-                        url: '../inc/getUrl.php?cid=' + value.contentId + '&id=' + value.id,
+                        url: rurl+'/inc/getUrl.php?cid=' + value.contentId + '&id=' + value.id,
                         dataType: "text",
                         success: function(data) {
                             //console.log(value.contentId, value.id, value.name, data);
@@ -72,3 +73,18 @@ function t() {
 $(function(){
 		$('.codrops-demos').hide();
 });
+  function getRealPath(){
+    //获取当前网址，如： http://localhost:8083/myproj/view/my.html
+     var curWwwPath=window.document.location.href;
+     //获取主机地址之后的目录，如： myproj/view/my.html
+    var pathName=window.document.location.pathname;
+    var pos=curWwwPath.indexOf(pathName);
+    //获取主机地址，如： http://localhost:8083
+    var localhostPaht=curWwwPath.substring(0,pos);
+    //获取带"/"的项目名，如：/myproj
+    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+
+　　 //得到了 http://localhost:8083/myproj
+    var realPath=localhostPaht+projectName;
+    return realPath;
+  }
